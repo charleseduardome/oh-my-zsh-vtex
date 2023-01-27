@@ -1,20 +1,16 @@
 TOOLBELT_CFG_FILE="$HOME/.config/configstore/vtex.json"
+CUSTOM_VTEX_COLOR="magenta"
 
 parse_vtex_json() {
     cat "$TOOLBELT_CFG_FILE" | grep $1 | sed -n "s/^.*\"$1\": \"\(.*\)\".*$/\1/p"
 }
 
-get_vtex_account() {
-    parse_vtex_json "account"
-}
-
-get_vtex_workspace() {
-    parse_vtex_json "workspace"
-}
+ACCOUNT=`parse_vtex_json "account"`
+WORKSPACE=`parse_vtex_json "workspace"`
 
 show_vtex() {
   if [[ -e 'manifest.json' ]]; then
-    echo "%{$fg[magenta]%}vtex:($(get_vtex_account)@$(get_vtex_workspace))%{$reset_color%} "
+    echo "%{$fg[$CUSTOM_VTEX_COLOR]%}vtex:($ACCOUNT@$WORKSPACE)%{$reset_color%} "
   fi
 }
 
