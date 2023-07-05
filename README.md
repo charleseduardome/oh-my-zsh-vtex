@@ -40,7 +40,7 @@ Com o oh-my-zsh instalado vamos criar nosso tema:
 
 ### TO DO LIST
 
-* Existe um bug que, ao alterar a woskspace, o terminal não reflete de imediado, tendo que fechar e abri um novo terminal.
+* Existe um bug que, ao alterar a woskspace, o terminal não reflete de imediado, tendo que fechar e abrir um novo terminal.
 
 
 
