@@ -30,32 +30,17 @@ Com o oh-my-zsh instalado vamos criar nosso tema:
 
 1 - acesse a pasta `.oh-my-zsh/themes`;
 
-2 - Crie um arquivo chamado `vtex.zsh-theme` e cole o seguinte código;
-
-```
-TOOLBELT_CFG_FILE="$HOME/.config/configstore/vtex.json"
-CUSTOM_VTEX_COLOR="magenta"
-
-parse_vtex_json() {
-    cat "$TOOLBELT_CFG_FILE" | grep $1 | sed -n "s/^.*\"$1\": \"\(.*\)\".*$/\1/p"
-}
-
-ACCOUNT=`parse_vtex_json "account"`
-WORKSPACE=`parse_vtex_json "workspace"`
-
-show_vtex() {
-  if [[ -e 'manifest.json' ]]; then
-    echo "%{$fg[$CUSTOM_VTEX_COLOR]%}vtex:($ACCOUNT@$WORKSPACE)%{$reset_color%} "
-  fi
-}
-
-PROMPT='[%*] %{$fg[cyan]%}%n%{$reset_color%}:%{$fg[green]%}%c%{$reset_color%}$(git_prompt_info) $(show_vtex)%(!.#.$) '
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[yellow]%}git:("
-ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%}"
-```
+2 - Copie o arquivo `vtex.zsh-theme`;
 
 3 - Volte para a pasta raiz do seu usuário e abra o arquivo `oh-my-zsh`;
 
 4 - Encontre o trecho que seta o tema e altere para `ZSH_THEME="vtex"`;
 
 5 - Reinicie seu terminal, agora quando vc entrar em alguma pasta que seja um projeto VTEX IO, deve aparecer a account e workspace que vc está trabalhando.
+
+### TO DO LIST
+
+* Existe um bug que, ao alterar a woskspace, o terminal não reflete de imediado, tendo que fechar e abri um novo terminal.
+
+
+
