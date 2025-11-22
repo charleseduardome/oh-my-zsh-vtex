@@ -1,20 +1,33 @@
-## Overview
+# VTEX Workspace Prompt for Oh My Zsh
 
-This is an oh-my-zsh customization for MacOS users to see information of which VTEX `workspace` and `account` in the terminal without needing to use the `vtex whoami` command.
+A custom **Oh My Zsh** theme that displays the current VTEX IO `workspace` and `account` directly in your terminal prompt—no need to run `vtex whoami` every time.
 
-## Preview
+## 📸 Preview
 
 ![screenshot](/images/screenshot.png?raw=true)
 
-## Requirements
+## 📦 Requirements
 
-#### [oh-my-zsh](http://ohmyz.sh/)
+- **VTEX IO CLI** — https://developers.vtex.com/docs/guides/vtex-io-documentation-vtex-io-cli-install  
+- **Oh My Zsh** — http://ohmyz.sh/
 
-## Installation
+## 🚀 Installation
 
-Download or clone repository into `zsh_custom/themes`
+1. Copy the theme file into the Oh My Zsh theme directory:
 
-Copy `vtex.zsh-theme` into `~/.oh-my-zsh/themes/vtex.zsh-theme`
+   ```bash
+   cp vtex.zsh-theme ~/.oh-my-zsh/themes/vtex.zsh-theme
+2. Set the theme in your .zshrc:
 
-Set `ZSH_THEME="vtex"` in your `.zshrc`
+   ```bash
+   ZSH_THEME="vtex"
+3. Set the theme in your .zshrc:
 
+   ```bash
+   source ~/.zshrc
+
+## 📝 Notes
+
+- Works on macOS and Linux.
+
+- Automatically displays the workspace and account currently active in the VTEX IO CLI.
